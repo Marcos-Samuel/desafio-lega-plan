@@ -1,0 +1,43 @@
+.large-btn {
+  display: flex;
+  width: 28.125rem;
+  height: 3.1875rem;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+
+  font-size: 1rem;
+  letter-spacing: -0.02rem;
+}
+
+.medium-btn {
+  width: 100%;
+  display: flex;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  color: #ffffff;
+
+  font-size: 1rem;
+  letter-spacing: -0.02rem;
+  border-radius: 0.5rem;
+}
+
+.primary {
+    background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+}
+
+.secondary {
+    background: #E7EEFB;
+    color: #000;
+}
+
+.darger {
+    background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+}

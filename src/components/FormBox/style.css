@@ -1,0 +1,30 @@
+.conteiner-task {
+  display: flex;
+  width: 28.125rem;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  border-radius: 1rem;
+  border: 1px solid #eaecf0;
+  background: #fff;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.conteine-check-box {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+  border-radius: 0.5rem;
+  border: 1px dashed #d7dde9;
+}
+
+.conteine-check-box label {
+  width: 17.125rem;
+  color: #000000;
+}
