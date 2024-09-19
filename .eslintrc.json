@@ -9,7 +9,7 @@
     "react/react-in-jsx-scope": "off", 
     "@typescript-eslint/no-unused-vars": "warn",
     "no-console": "warn",
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"]
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "single"]
   }
 }

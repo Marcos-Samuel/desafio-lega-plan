@@ -8,17 +8,21 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { addHabit, getHabits } from './actions';
 
+interface HabitFormData {
+  habit: string;
+}
+
 export default function Home() {
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<HabitFormData>();
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpenAndCloseModal = () => { 
     setIsOpenModal(props => props = !isOpenModal);
   }
 
-  const onSubmit: SubmitHandler<any> = async (data) => {
-    await addHabit(data)
+  const onSubmit: SubmitHandler<HabitFormData> = async (data) => {
+    await addHabit(data.habit)
   }
 
   return (

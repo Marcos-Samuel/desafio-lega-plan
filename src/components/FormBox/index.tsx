@@ -1,19 +1,12 @@
-"use client";
-
-import { SubmitHandler, useForm } from "react-hook-form";
-import TaskBox from "../TaskBox";
-import "./style.css";
-import Modal from "../Modal";
-import Button from "../Button";
+'use client';
+import TaskBox from '../TaskBox';
+import './style.css';
 
 const FormBox: React.FC = () => {
-  const { register, handleSubmit, watch } = useForm();
-  const onSubmit: SubmitHandler<any> = (data) => console.log(data);
 
   return (
     <>
-      
-      <form className="conteiner-task" onSubmit={handleSubmit(onSubmit)}>
+      <form className='conteiner-task'>
         <TaskBox />
         <TaskBox />
         <TaskBox />
