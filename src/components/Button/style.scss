@@ -1,0 +1,39 @@
+@import './../../styles/_variables.scss';
+@import './../../styles/_mixins.scss';
+
+.large-btn {
+  @include flex-center(row, center, center, $gap-small);
+  max-width: $button-width;
+  width: 100%;
+  height: $button-height;
+  padding: $padding-small $padding-large;
+  flex-shrink: 0;
+  border-radius: $border-radius;
+  background: linear-gradient(90deg, $color-primary-start 0%, $color-primary-end 68.65%);
+  
+  @include typography($font-size-medium, $font-weight-regular, $letter-spacing-small);
+}
+
+.medium-btn {
+  width: 100%;
+  @include flex-center(row, center, center, $gap-small);
+  align-self: stretch;
+  color: $color-white;
+  padding: $padding-small $padding-large;
+  @include typography($font-size-medium, $font-weight-regular, $letter-spacing-small);
+  border-radius: $border-radius;
+}
+
+.primary {
+  background: linear-gradient(90deg, $color-primary-start 0%, $color-primary-end 68.65%);
+}
+
+.secondary {
+  background: $color-secondary-background;
+  color: $color-black;
+}
+
+.danger {
+  background: linear-gradient(90deg, $color-danger-start 0%, $color-danger-end 68.65%);
+}
+

@@ -1,0 +1,70 @@
+@import './../../styles/_variables.scss';
+@import './../../styles/_mixins.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-white, 0.80);
+  @include flex-center(center, center);
+  z-index: 9999;
+  backdrop-filter: blur(1px);
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: $max-width-container;
+  background: $color-white;
+  box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+  border-radius: $border-radius;
+  z-index: 10;
+}
+
+.modal-form {
+  @include flex-center(column, center, flex-start, $gap-large);
+  width: 100%;
+  padding: $padding-container;
+}
+
+.modal-content div {
+  width: 100%;
+}
+
+.modal-content input {
+  width: 100%;
+  display: flex;
+  padding: $padding-small;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-small;
+  border-radius: $border-radius;
+  border: 1px solid $color-border;
+  background-color: $color-white;
+  color: $color-black;
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-small;
+  font-size: $font-size-medium;
+  margin-top: $margin-medium;
+}
+
+.content-button-modal {
+  width: 100%;
+  @include flex-center(row-reverse, center, center, $gap-small);
+}
+
+@media (max-width: 768px) {
+  .modal-content, .modal-form {
+    height: 100%;
+  }
+
+  .modal-form {
+    justify-content: start;
+  }
+
+  .content-button-modal {
+    flex-direction: column-reverse;
+  }
+}

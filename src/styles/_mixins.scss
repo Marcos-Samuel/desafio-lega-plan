@@ -1,0 +1,22 @@
+@mixin flex-center($flex-direction: row, $justify-content: center, $align-items: center, $gap: 0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+@mixin button-size($width: $button-width, $height: $button-height) {
+  width: $width;
+  height: $height;
+  padding: $padding-small $padding-large;
+  flex-shrink: 0;
+}
+
+@mixin typography($font-size, $font-weight, $letter-spacing) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  font-style: normal;
+  line-height: normal;
+}

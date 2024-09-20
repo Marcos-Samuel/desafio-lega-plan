@@ -1,0 +1,27 @@
+@import './../../styles/_variables.scss';
+
+.container-task {
+  display: flex;
+  width: 100%;
+  max-width: $max-width-container;
+  padding: $padding-container;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-container;
+
+  border-radius: $border-radius;
+  border: 1px solid $color-border;
+  background: $color-background;
+  box-shadow: $box-shadow;
+}
+
+.container-task p {
+  color: $color-text-opacity;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.02rem;
+}

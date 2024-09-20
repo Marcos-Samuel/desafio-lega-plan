@@ -1,0 +1,47 @@
+@import './../../styles/_variables.scss';
+@import './../../styles/_mixins.scss';
+
+.conteine-check-box {
+  @include flex-center(row, center, center, $gap-small);
+  padding: $padding-small;
+  align-self: stretch;
+  border-radius: $border-radius;
+  border: 1px dashed $color-border;
+}
+
+input[type="checkbox"] {
+  appearance: none; 
+  min-width: 20px;
+  min-height: 20px;
+  border: 1px solid #B0BBD1; 
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked::before {
+  content: '';
+  position: absolute;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url('/images/check.svg') center center no-repeat;
+  background-size: contain;
+  background-color: #A0DCF6; 
+}
+
+.conteine-check-box:hover,
+label:hover,
+input:hover {
+  background-color: rgba(247, 249, 253, 1);
+  cursor: url('/images/cursor.svg'), auto;
+}
+
+.conteine-check-box label {
+  width: 17.125rem;
+  color: $color-black;
+}
+
+.conteine-check-box .isDone {
+  text-decoration: line-through;
+  color: $color-black-opacity;
+}

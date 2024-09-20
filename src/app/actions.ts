@@ -1,8 +1,10 @@
 'use server';
 
 import { kv } from '@vercel/kv';
+import { v4 as uuidv4 } from 'uuid';
 
-type Habit = {
+export type Habit = {
+  id: string;
   habit: string;
   done: boolean;
 };
@@ -13,44 +15,47 @@ export async function addHabit(habit: string): Promise<Habit[]> {
     ? currentHabitsRaw
     : [];
 
-  const updatedHabits = [...currentHabits, { habit, done: false }];
+  const updatedHabits = [...currentHabits, { habit, done: false, id:uuidv4() }];
 
   await kv.hset('habits', { list: updatedHabits });
 
   return updatedHabits;
 }
 
-export async function deleteHabit(habit: string): Promise<Habit[]> {
-
+export async function deleteHabit(habitId: string): Promise<Habit[]> {
   const currentHabitsRaw = await kv.hget('habits', 'list');
   const currentHabits: Habit[] = Array.isArray(currentHabitsRaw)
     ? currentHabitsRaw
     : [];
 
-  const updatedHabits = currentHabits.filter((h: Habit) => h.habit !== habit);
+  const updatedHabits = currentHabits.filter((habit: Habit) => habit.id !== habitId);
 
-  await kv.hset('habits', { list: updatedHabits });
+  await kv.hset('habits', { list: updatedHabits }); 
 
   return updatedHabits;
 }
 
 export async function getHabits(): Promise<Habit[]> {
+ 
   const habitsRaw = await kv.hget('habits', 'list');
+  
   const habits: Habit[] = Array.isArray(habitsRaw) ? habitsRaw : [];
 
   return habits;
 }
 
-export async function toggleHabitStatus(habit: string): Promise<Habit[]> {
+
+export async function toggleHabitStatus(habitId: string): Promise<Habit[]> {
+
   const currentHabitsRaw = await kv.hget('habits', 'list');
   const currentHabits: Habit[] = Array.isArray(currentHabitsRaw) ? currentHabitsRaw : [];
   
   const updatedHabits = currentHabits.map((h: Habit) => 
-    h.habit === habit ? { ...h, done: !h.done } : h
+    h.id === habitId ? { ...h, done: !h.done } : h
   );
   
-  await kv.hset('habits', { list: updatedHabits });
+  await kv.hset('habits', { list: updatedHabits }); 
   
-  return updatedHabits;
+  return updatedHabits; 
 }
 

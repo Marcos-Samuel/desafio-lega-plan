@@ -1,8 +1,11 @@
 import Image from 'next/image';
-import './style.css';
+import './style.scss';
 import Logo from '../../../public/images/logo.svg';
+import { formatarData } from '@/utils/dataForm';
 
 const Header = () => {
+
+    const date = formatarData();
     return (
         <header>
             <div>
@@ -12,7 +15,7 @@ const Header = () => {
                     Bem-vindo de volta, Marcus
                 </h1>
 
-                <span>Segunda, 01 de Dezembro de 2025</span>
+                <span>{date}</span>
             </div>
         </header>
     );

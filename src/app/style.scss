@@ -1,0 +1,11 @@
+@import './../styles/_variables.scss';
+@import './../styles/_mixins.scss';
+
+main {
+  width: 100vw;
+  @include flex-center(column, center, center, $gap-large);
+
+  margin-top: $margin-medium;
+  padding: 0 $padding-extra-large;
+  padding-bottom: $margin-medium;
+}

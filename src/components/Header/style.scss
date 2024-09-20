@@ -1,0 +1,31 @@
+@import './../../styles/_variables.scss';
+@import './../../styles/_mixins.scss';
+
+header {
+  width: 100%;
+  @include flex-center(column, center);
+  height: fit-content;
+  padding: $padding-large $padding-extra-large 0 $padding-extra-large;
+
+  div {
+    width: 100%;
+    max-width: 83rem;
+    min-height: 2.25rem;
+    height: fit-content;
+    padding-bottom: $margin-medium;
+
+    @include flex-center(row, space-between, center);
+    flex-wrap: wrap;
+    border-bottom: 1px solid $color-border;
+
+    span {
+      color: $color-black-opacity;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header div h1 {
+    @include typography($font-size-medium, $font-weight-regular, $letter-spacing-small);
+  }
+}

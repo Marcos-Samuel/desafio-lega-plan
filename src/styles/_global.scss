@@ -1,0 +1,58 @@
+@import './_variables.scss';
+@import './_mixins.scss';
+
+@mixin responsive-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+  
+  :root {
+    --background: $background-light;
+    --foreground: $foreground-light;
+    @include responsive-dark-mode {
+      --background: $background-dark;
+      --foreground: $foreground-dark;
+    }
+  }
+  
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  body {
+    color: $color-text-opacity;
+    background: $color-white;
+    cursor: default;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1 {
+    color: $foreground-light;
+    font-size: $font-size-large;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: $letter-spacing-medium;
+  }
+  
+  label, span {
+    color: $foreground-light;
+    font-size: $font-size-medium;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    letter-spacing: $letter-spacing-small;
+  }
+  
+  @include responsive-dark-mode {
+    html {
+      color-scheme: dark;
+    }
+  }
